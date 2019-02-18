@@ -1,0 +1,29 @@
+install Mysql:
+
+mysql-ctl start
+
+
+mysql -u $C9_USER -p
+
+prompt: enter password      #(just press enter)
+
+download Chinook_MySQL:     (IN BASH)
+
+wget https://raw.githubusercontent.com/lerocha/chinook-database/master/ChinookDatabase/DataSources/Chinook_MySql_AutoIncrementPKs.sql
+
+
+mysql -u $C9_USER -p < Chinook_MySql_AutoIncrementPKs.sql           #(takes a minute to complete) #-u is user....TYPE THIS INTO BASH
+Enter password:                                                     #(press enter)
+
+install pymysql:(BASH)
+sudo pip3 install pymysql
+
+
+                                            ----------------------
+When using libraries, it's a good idea to keep a record of which ones you've used and which versions:
+              
+pip3 freeze > requirements.txt
+
+
+That creates a requirements.txt file, which is just a list of all the packages and libraries that are used.
+It's handy when you push to Git that you have a list of exactly what you used.

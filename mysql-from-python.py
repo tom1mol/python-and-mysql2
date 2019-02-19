@@ -15,16 +15,11 @@ connection = pymysql.connect(host='localhost',
                             db='Chinook')
                             
 try:
-    #run a query
-    #we open a connection to the database and then we use that connection to create the cursor.
-    #The cursor is the object that we actually use to execute queries.
-    #Executing a query with a cursor will cause the query to run in the server, but it won't return the data to your application.
-    #To do that, you need to fetch the data.
+   
     with connection.cursor() as cursor:   # advantage of using the DictCursor is that the rows now include the column names.
-        cursor.execute("""CREATE TABLE IF NOT EXISTS
-                        Friends(name char(20), age int, DOB datetime);""")
-                        #creates a table called friends, a name with up to 20 char,age,dob
-        #note that the above will still display a warning (not error) if the table already exists
+        row = ("Bob", 21, "1990-02-06 23:04:56")         #values stored in a tuple called row
+        cursor.execute("INSERT INTO Friends VALUES (%s, %s, %s);", row)  #cursor unpacks tuple.   %s represents each item in tuple
+        connection.commit()                
 finally:
     #Close the connection, regardless of whether the above was successful
     connection.close()

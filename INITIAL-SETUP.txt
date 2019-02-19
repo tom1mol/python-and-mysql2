@@ -27,3 +27,22 @@ pip3 freeze > requirements.txt
 
 That creates a requirements.txt file, which is just a list of all the packages and libraries that are used.
 It's handy when you push to Git that you have a list of exactly what you used.
+
+                                                ----------------------
+                                                                            =========================
+tom1mol:~/workspace $ git init
+Initialized empty Git repository in /home/ubuntu/workspace/.git/
+tom1mol:~/workspace (master) $ git add .
+tom1mol:~/workspace (master) $ git commit -m "initial commit"
+[master (root-commit) ef8637a] initial commit
+ 5 files changed, 15918 insertions(+)
+ create mode 100644 Chinook_MySql_AutoIncrementPKs.sql
+ create mode 100644 INITIAL-SETUP.txt
+ create mode 100644 README.md
+ create mode 100644 mysql-from-python.py
+ create mode 100644 requirements.txt
+tom1mol:~/workspace (master) $ git rm -r --cached Chinook_MySql_AutoIncrementPKs.sql                #this removes chinook file
+
+can ignore the .sql files when pushing to git by:
+
+echo '*.sql' >> .gitignore                

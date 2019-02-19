@@ -15,11 +15,15 @@ connection = pymysql.connect(host='localhost',
                             
 try:
     #run a query
-    with connection.cursor() as cursor:
-        sql = "SELECT * FROM Artist;"
+    #we open a connection to the database and then we use that connection to create the cursor.
+    #The cursor is the object that we actually use to execute queries.
+    #Executing a query with a cursor will cause the query to run in the server, but it won't return the data to your application.
+    #To do that, you need to fetch the data.
+    with connection.cursor(pymysql.cursors.DictCursor) as cursor:   # advantage of using the DictCursor is that the rows now include the column names.
+        sql = "SELECT * FROM Genre;"
         cursor.execute(sql)
-        result = cursor.fetchall()
-        print(result)
+        for row in cursor:      
+            print(row)
 finally:
     #Close the connection, regardless of whether the above was successful
     connection.close()

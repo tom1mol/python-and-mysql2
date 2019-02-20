@@ -4,4 +4,5 @@ Python And MySQL Introduction						https://youtu.be/5FgoZr5piOk
 Connecting To MySQL From Python						https://youtu.be/91JNCfh4kH4
 Cursor                                              https://youtu.be/1ic0Se7yroE
 Create A Table                                      https://youtu.be/nJDtBZkco8I
+Execute Many                                        https://youtu.be/nVQAb_B0lvI
 

@@ -17,8 +17,10 @@ connection = pymysql.connect(host='localhost',
 try:
    
     with connection.cursor() as cursor:   # advantage of using the DictCursor is that the rows now include the column names.
-        row = ("Bob", 21, "1990-02-06 23:04:56")         #values stored in a tuple called row
-        cursor.execute("INSERT INTO Friends VALUES (%s, %s, %s);", row)  #cursor unpacks tuple.   %s represents each item in tuple
+        rows = [("Bob", 21, "1990-02-06 23:04:56"),         #values stored in a tuple called row
+                ("Jim", 56, "1955-05-09 13:12:45"),
+                ("Fred", 100, "1911-09-12 01:01:01")]
+        cursor.executemany("INSERT INTO Friends VALUES (%s, %s, %s);", rows)  #cursor unpacks tuple.   %s represents each item in tuple
         connection.commit()                
 finally:
     #Close the connection, regardless of whether the above was successful

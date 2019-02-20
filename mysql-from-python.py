@@ -17,7 +17,8 @@ connection = pymysql.connect(host='localhost',
 try:
    
     with connection.cursor() as cursor:   # advantage of using the DictCursor is that the rows now include the column names.
-        cursor.execute("UPDATE Friends SET age = 22 WHERE name = 'Bob';")  
+        cursor.execute("UPDATE Friends SET age = %s WHERE name = %s;",
+                        (23, 'Bob'))  
         connection.commit()                
 finally:
     #Close the connection, regardless of whether the above was successful

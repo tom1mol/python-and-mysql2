@@ -7,4 +7,5 @@ Create A Table                                      https://youtu.be/nJDtBZkco8I
 Execute Many                                        https://youtu.be/nVQAb_B0lvI
 Update                                              https://youtu.be/qYsr8_UBQBo
 Alternate Update                                    https://youtu.be/Lbshh2P72_E
+Update Many                                         https://youtu.be/2VjIXSiXieM
 

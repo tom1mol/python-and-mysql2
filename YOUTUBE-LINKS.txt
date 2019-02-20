@@ -5,4 +5,6 @@ Connecting To MySQL From Python						https://youtu.be/91JNCfh4kH4
 Cursor                                              https://youtu.be/1ic0Se7yroE
 Create A Table                                      https://youtu.be/nJDtBZkco8I
 Execute Many                                        https://youtu.be/nVQAb_B0lvI
+Update                                              https://youtu.be/qYsr8_UBQBo
+Alternate Update                                    https://youtu.be/Lbshh2P72_E
 

@@ -17,7 +17,7 @@ connection = pymysql.connect(host='localhost',
 try:
    
     with connection.cursor() as cursor:   # advantage of using the DictCursor is that the rows now include the column names.
-        rows = cursor.execute("DELETE FROM Friends WHERE name = %s;", 'bob')
+        rows = cursor.executemany("DELETE FROM Friends WHERE name = %s;", ['bob', 'jim'])
         connection.commit()                
 finally:
     #Close the connection, regardless of whether the above was successful
